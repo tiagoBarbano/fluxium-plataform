@@ -1,4 +1,4 @@
-# Fluxium PlataformS
+# Fluxium Plataform
 
 ![Fluxium logo](assets/logo.png)
 
