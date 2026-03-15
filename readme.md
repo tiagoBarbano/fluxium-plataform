@@ -65,42 +65,7 @@ Fluxium é uma plataforma modular de orquestração de fluxos de negócio que ac
 ![Exemplo 3](assets/image3.png)
 ![Exemplo 4](assets/image4.png)
 
-## Fluxo de Integração (diagrama)
-O diagrama abaixo mostra o fluxo de integração entre `Gateway`, `LightApi`, `Workflow` e `BRMS` (`decision-service`).
 
-```mermaid
-sequenceDiagram
-	participant Client
-	participant Gateway
-	participant LightApi
-	participant Workflow
-	participant BRMS as DecisionService
-	participant Engine
-	participant Services
-
-	Client->>Gateway: Requisição externa (API call)
-	Gateway-->>Client: Autenticação/Rate-limit (negado ok)
-	alt Rota simples (Facade)
-		Gateway->>LightApi: Roteia para fachada (LightApi)
-		LightApi->>Engine: Solicita ação/consulta
-		Engine->>BRMS: Avalia regras (se necessário)
-		BRMS-->>Engine: Decisão
-		Engine->>Services: Executa tarefa(s)
-		Services-->>LightApi: Resultado
-		LightApi-->>Gateway: Resposta final
-		Gateway-->>Client: Entrega resposta
-	else Rota orquestrada
-		Gateway->>Workflow: Roteia para orquestração
-		Workflow->>BRMS: Consulta regra para fluxo/branch
-		BRMS-->>Workflow: Decisão (branch)
-		Workflow->>LightApi: Executa nó que chama serviços
-		LightApi->>Services: Operação específica
-		Services-->>Workflow: Resultado do nó
-		Workflow->>Engine: Notifica/coordena estado se necessário
-		Workflow-->>Gateway: Resultado agregado
-		Gateway-->>Client: Callback/resultado final
-	end
-```
 
 Referência completa do fluxo e recomendações de instrumentação estão em `INTEGRATION_FLOW.md`.
 
