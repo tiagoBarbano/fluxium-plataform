@@ -2,7 +2,7 @@
 
 ![Fluxium logo](assets/logo.png)
 
-## Pitch Rápido
+## O que é?
 Fluxium é uma plataforma modular de orquestração de fluxos de negócio que acelera integrações, reduz custos operacionais e aumenta a velocidade de entrega de produtos digitais. Fornecemos um gateway extensível, um motor de workflows e serviços desacoplados prontos para produção, com observabilidade e deploy facilitados.
 
 ## Multitenancy, Multi-produto e Workspaces
