@@ -83,7 +83,3 @@ Referência completa do fluxo e recomendações de instrumentação estão em `I
 ## Next Steps / Call To Action
 - Agendar demo técnica com apresentação do fluxo end-to-end.
 - Preparar PoC com um caso real do cliente para validar ROI. -->
-
----
-
-Para ajustar o tom, público-alvo ou incluir preços/planos, diga como prefere e eu adapto o documento.  
