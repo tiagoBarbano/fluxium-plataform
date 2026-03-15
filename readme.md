@@ -1,4 +1,4 @@
-# Fluxium — Proposta Comercial
+# Fluxium PlataformS
 
 ![Fluxium logo](assets/logo.png)
 
