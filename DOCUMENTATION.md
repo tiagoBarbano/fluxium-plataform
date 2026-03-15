@@ -5,6 +5,13 @@
 - Objetivo: Permitir integração de serviços, automação de decisões e gestão de entidades (empresas, produtos, workspaces) com observabilidade e deploy industriais.
 - Público-alvo: Engenheiros, DevOps, Product Managers e stakeholders técnicos.
 
+## Multitenancy, Multi-produto e Workspaces personalizados
+- **Multitenancy:** A plataforma foi projetada para suportar múltiplos tenants (clientes) isolados; cada tenant pode ter suas próprias políticas, dados e configurações, garantindo segregação lógica e controles de acesso por tenant.
+- **Multi-produto:** Cada tenant pode gerir vários produtos independentes — cada produto possui configurações, fluxos, integrações e pipelines próprios, permitindo oferecer diferentes linhas de produto sobre a mesma infraestrutura.
+- **Workspaces personalizados:** Workspaces são definíveis por tenant e por produto para agrupar times, ambientes e recursos. Cada workspace pode ter permissões, integrações e parâmetros customizados (ex.: conexões, limites, templates de fluxo).
+- **Impacto operacional:** Recomenda-se planejar namespaces/tenants no orquestrador (Kubernetes) e segregação de configurações em `fluxium-admin`; observabilidade e métricas devem incluir labels por tenant/product/workspace para permitir alertas e dashboards dedicados.
+
+
 ## Principais componentes
 - `fluxium-admin`: API e ferramentas administrativas para gestão de entidades, usuários e configurações.
 - `fluxium-gateway`: API Gateway com plugins (autenticação, rate-limit, cache, forward, etc.), roteamento e políticas.
